@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tableau de bord de gestion des réservations du Port de plaisance Russell.">
+    <title>Tableau de bord - Port de plaisance Russell</title>
+    <link rel="icon" href="/images/ship-wheel.png">
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+
+<header class="header-nav-form">
+    <h1>Tableau de bord</h1>
+    <nav>
+        <ul >
+            <li><a href="/catways-view">Catway</a></li>
+            <li><a href="/reservations-view">Réservations</a></li>
+            <li><a href="/users-view">Utilisateurs</a></li>
+            <li><a href="/api-docs">Documentation API</a></li>
+            <li><a href="/logout"> Se déconnecter</a></li>
+
+        </ul>
+    </nav>
+</header>
+<body>
+<main>
+    <div class="table-form">
+    <p>Connecté : <%= user.username %> (<%= user.email %>)</p>
+    <p>date : <%= date %></p>
+
+    <table class="table-cell">
+        <caption>Réservations en cours</caption>
+        <thead>
+            <tr>
+                <th>Catway</th>
+                <th>Nom du client</th>
+                <th>Bateau</th>
+                <th>début</th>
+                <th>Fin</th>
+            </tr>
+        </thead>
+        <tbody>
+             <% reservations.forEach(function(reservation) { %>
+            <tr>
+                <td><%=reservation.catwayNumber%></td>
+                <td><%=reservation.clientName%></td>
+                <td><%=reservation.boatName%></td>
+                <td><%=reservation.startDate.toLocaleDateString('FR-fr')%></td>
+                <td><%=reservation.endDate.toLocaleDateString('FR-fr')%></td>
+            </tr>
+             <% }); %>
+        </tbody>
+</div>
+    </table>
+</main>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tableau de bord de gestion des réservations du Port de plaisance Russell.">
+    <link rel="icon" href="/images/ship-wheel.png">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <title>Catways - Port de plaisance Russell</title>
+</head>
+<header class="header-form">
+    <h1>Catways</h1>
+</header>
+
+<body>
+<main>
+    <div class="table-form">
+    <table class="table-cell">
+        <caption>Liste de tous les catways</caption>
+        <thead>
+            <tr>
+                <th>catway</th>
+                <th>type</th>
+                <th>état</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% catways.forEach (function (catway) { %>
+            <tr>
+                <td><%=catway.catwayNumber%></td>
+                <td><%=catway.catwayType%></td>
+                <td><%=catway.catwayState%></td>
+                <td><a href="/catways-view/<%= catway.catwayNumber %>" class="link-form">Mettre à jour/Supprimer</a></td>
+            </tr>
+      <% });%>
+
+        </tbody>
+    </table>
+
+
+<fieldset class="fieldset-form">
+    <legend>Création d'un catway</legend>
+    <form action="/catways-view" method="post">
+        <div class="input-form">
+        <label for="catwayNumber" > Numéro</label>
+        <input type="number" id="catwayNumber" name="catwayNumber">
+
+        <label for="Type"> Type </label>
+         <select name="catwayType" id="Type">
+           <option value="short">short</option>
+           <option value="long">long</option>
+         </select>
+       
+         <label for="State">Etat</label>
+         <input type="text" id="State" name="catwayState">
+         </div>
+         <div class="button-create">
+         <button type="submit">Créer</button>
+        </div>
+    </form>
+    </fieldset>
+
+   
+<a class="link-form" href="/dashboard"> Retour au tableau de bord</a>
+    </div>
+</main>
+
+    
+</body>
+</html>

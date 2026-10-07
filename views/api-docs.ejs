@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tableau de bord de gestion des réservations du Port de plaisance Russell."
+    />
+    <link rel="icon" href="/images/ship-wheel.png">
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <title>API Document - port de plaisance Russell</title>
+  </head>
+
+  <header class="header-form">
+    <h1>API documentation</h1>
+  </header>
+
+  <body>
+    <main>
+      <div class="table-form">
+        <h2>Catways</h2>
+        <table class="table-cell">
+          <thead>
+            <tr>
+              <th>Méthode</th>
+              <th>URL</th>
+              <th>Descritption</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>GET</td>
+              <td>/catways/</td>
+              <td>Lister tout les catway</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/catways/:id</td>
+              <td>Récupére un catway précis</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/catways/</td>
+              <td>Ajouter un catway</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>/catways/:id</td>
+              <td>Modifier un catway</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>/catways/:id</td>
+              <td>Supprimer un catway</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Réservations</h2>
+        <table class="table-cell">
+          <thead>
+            <tr>
+              <th>Méthode</th>
+              <th>URL</th>
+              <th>Descritption</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>GET</td>
+              <td>/catways/:id/reservations</td>
+              <td>Lister toutes les Réservations</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/catways/:id/reservations/:idReservation</td>
+              <td>Récupérer une réservation précise</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/catways/:id/reservations</td>
+              <td>Créer une réservation</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>/catways/:id/reservations/:idReservation</td>
+              <td>Modifier une réservation</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>/catways/:id/reservations/:idReservation</td>
+              <td>Supprimer une réservation</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Utilisateurs</h2>
+        <table class="table-cell">
+          <thead>
+            <tr>
+              <th>Méthode</th>
+              <th>URL</th>
+              <th>Descritption</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>GET</td>
+              <td>/users</td>
+              <td>Lister tout les users</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/users/:id</td>
+              <td>Récupérer un user précis</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/users</td>
+              <td>Créer un user</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>/users/:id</td>
+              <td>Modifier un user</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>/users/:id</td>
+              <td>Supprimer un user</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Authentification</h2>
+        <table class="table-cell">
+          <thead>
+            <tr>
+              <th>Méthode</th>
+              <th>URL</th>
+              <th>Descritption</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>POST</td>
+              <td>/login</td>
+              <td>Connecte l'utilisateur</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/logout</td>
+              <td>Déconnecte l'utilisateur</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <a href="/dashboard" class="link-form"> Retour au tableau de bord</a>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tableau de bord de gestion des réservations du Port de plaisance Russell.">
+    <link rel="icon" href="/images/ship-wheel.png">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <title>Catways - Port de plaisance Russell</title>
+</head>
+
+<header class="header-form">
+    <h1>Catways</h1>
+</header>
+
+<body>
+<main>
+    <div class="table-form">
+        <table class="table-cell">
+        <thead>
+            <tr>
+                <th>catway</th>
+                <th>type</th>
+                <th>état</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td><%=catway.catwayNumber%></td>
+                <td><%=catway.catwayType%></td>
+                <td><%=catway.catwayState%></td>
+                
+            </tr>
+
+        </tbody>
+    </table>
+
+
+<fieldset class="fieldset-form">
+    <legend>Mise à jour de l'état</legend>
+    <form action="/catways-view/<%= catway.catwayNumber %>" method="post" >
+        <div class="input-form">
+       
+         <label for="State">Nouvel Etat</label>
+         <input type="text" id="State" name="catwayState" value="<%=catway.catwayState %>">
+         </div>
+ <div class="button-update-delete">
+         <button type="Submit">Modifier</button>
+        
+    </form>
+
+   
+     <form action="/catways-view/<%= catway.catwayNumber %>/delete" method="post" >
+        <button type="Submit">Supprimer</button>
+        
+    </form>
+    </div>
+    </fieldset>
+   
+<a href="/dashboard" class="link-form"> Retour au tableau de bord</a>
+</div>
+</main>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tableau de bord de gestion des réservations du Port de plaisance Russell.">
+    <link rel="icon" href="/images/ship-wheel.png">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <title>Réservations- Port de plaisance Russell</title>
+</head>
+<header class="header-form">
+    <h1>Réservations</h1>
+</header>
+<body>
+    <main>
+        <div class="table-form">
+    <table class="table-cell">
+        <caption>Liste des réservations</caption>
+        <thead>
+            <tr>
+                <th>Numéro de réservation</th>
+                <th>Nom</th>
+                <th>Bateau</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <% reservations.forEach( function(reservation){%>
+            <tr>
+                <td><%= reservation._id%></td>
+                <td><%= reservation.clientName%></td>
+                <td><%= reservation.boatName%></td>
+                <td><%= reservation.startDate.toLocaleDateString('fr-FR')%></td>
+                <td><%= reservation.endDate.toLocaleDateString('fr-FR')%></td>
+                <td><a href="/reservations-view/<%= reservation._id %>" class="link-form">Mettre à jour/Supprimer</a></td>
+            </tr>
+        <%});%>
+        </tbody>
+    </table>
+
+    <fieldset class="fieldset-form">
+        <legend>Créer une réservation</legend>
+    <form action="/reservations-view" method="post" class="form-grid">
+
+        <div class="input-form">
+        <label for="catwayNumber">Numéro de catway :</label>
+        <input type="number" id="catwayNumber" name="catwayNumber">
+       
+        
+        <label for="clientName">Nom du client :</label>
+        <input type="text" id="clientName" name="clientName">
+
+        <label for="boatName">Nom du bateau :</label>
+        <input type="text" id="boatName" name="boatName">
+
+        <label for="startDate">Date de début :</label>
+        <input type="text" id="startDate" name="startDate">
+
+        <label for="endDate">Date de fin :</label>
+        <input type="text" id="endDate" name="endDate">
+        </div>
+        <div class="button-create">
+        <button type="submit">Créer</button>
+        </div>
+    </form>
+    </fieldset>
+
+    <a href="/dashboard" class="link-form"> Retour au tableau de bord </a>
+    </div>
+    </main>
+</body>
+</html>

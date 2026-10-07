@@ -1,0 +1,24 @@
+
+h1 {
+    background-color: #14146a;
+    padding: 30px;
+    text-align: center;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+}
+
+.body-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

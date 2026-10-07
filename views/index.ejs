@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tableau de bord de gestion des réservations du Port de plaisance Russell."
+    />
+    <link rel="icon" href="/images/ship-wheel.png">
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <title>Accueil - Port de plaisance Russell</title>
+  </head>
+
+  <header>
+    <h1>Port de plaisance Russell</h1>
+  </header>
+  <body>
+    <main>
+      <div class="body-form">
+        <p>
+          Application de gestion des réservations de catways pour le Port de
+          plaisance Russell.
+        </p>
+
+        <fieldset class="fieldset-form">
+          <legend>Connexion</legend>
+          <form action="/login" method="post">
+            <div class="form-login">
+              <label for="email"> Email :</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+
+              <label for="password"> Password :</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+
+              <button type="submit" value="Se connecter">Se connecter</button>
+            </div>
+          </form>
+        </fieldset>
+
+        <a href="/api-docs" class="link-form">Documentation de l'API</a>
+      </div>
+    </main>
+  </body>
+</html>

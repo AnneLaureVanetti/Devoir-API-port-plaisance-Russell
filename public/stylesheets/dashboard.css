@@ -1,0 +1,24 @@
+.header-nav-form {
+  background-color: rgb(16, 16, 82);
+  padding: 30px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+li:hover {
+  font-weight: 500;
+}

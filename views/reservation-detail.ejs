@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="form">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tableau de bord de gestion des réservations du Port de plaisance Russell.">
+    <link rel="icon" href="/images/ship-wheel.png">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <title>Réservations- Port de plaisance Russell</title>
+</head>
+<header class="header-form">
+    <h1>Réservations</h1>
+</header>
+<body>
+    <main>
+        
+    <div class="table-form">
+    <table class="table-cell">
+        <thead>
+            <tr>
+                <th>Numéro de réservation</th>
+                <th>Nom</th>
+                <th>Bateau</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> 
+                <td><%= reservation._id%></td>
+                <td><%= reservation.clientName%></td>
+                <td><%= reservation.boatName%></td>
+                <td><%= reservation.startDate.toLocaleDateString('fr-FR')%></td>
+                <td><%= reservation.endDate.toLocaleDateString('fr-FR')%></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <fieldset class="fieldset-form">
+        <legend>Mettre à jour réservation</legend>
+    <form action="/reservations-view/<%=reservation._id%>" method="post">
+<div class="input-form">
+
+        <label for="clientName">Nouveau client</label>
+        <input type="text" id="clientName" name="clientName" value="<%= reservation.clientName %>">
+
+        <label for="boatName">Autre bâteau</label>
+        <input type="text" id="boatName" name="boatName" value="<%= reservation.boatName %>">
+
+        <label for="startDate">Nouvelle date de début</label>
+        <input type="date" id="startDate" name="startDate">
+
+        <label for="endDate">Nouvelle date de fin</label>
+        <input type="date" id="endDate" name="endDate">
+         </div>
+
+<div class="button-update-delete">
+        <button type="submit" >Modifier</button>
+
+    </form>
+
+    <form action="/reservations-view/<%=reservation._id%>/delete" method="post">
+        <button type="submit" >Supprimer</button>
+
+    </form>
+   
+</fieldset>
+    <a href="/dashboard" class="link-form"> Retour au tableau de bord</a>
+    
+    </div>
+    </main>
+    
+</body>
+</html>
